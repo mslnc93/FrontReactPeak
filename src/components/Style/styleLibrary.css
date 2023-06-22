@@ -1,0 +1,32 @@
+.MuiMenu-list{
+    background-color: #333333;
+}
+.MuiButton-text{
+    text-decoration: none;
+    color: white!important;
+}
+
+.test:hover{
+    color: #00BFFF !important;
+}
+
+.MuiTypography-root{
+    border: solid transparent 1px;
+    border-radius: 5px;
+    margin: auto !important;
+    color: radial-gradient(circle at 50% -20.71%, #00ffff 0, #00e7ff 25%, #0cc1ed 50%, #329cc3 75%, #3a7d9c 100%)!important;
+}
+
+.item {
+    border: solid 2px #00CC7A!important;
+    margin: 20px!important;
+    padding: 0!important;
+}
+
+a {
+    position: relative;
+    overflow: hidden;
+}
+
+
+

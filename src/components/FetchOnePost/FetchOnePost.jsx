@@ -1,0 +1,120 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Div, Div2, H1, H3, Image, Container, Para, Icon } from '../Style/FetchPost.style'
+import Navbar from '../NavbarForum/NavbarForum'
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import { red } from '@mui/material/colors';
+import { Link } from 'react-router-dom'
+
+
+
+
+function FetchOnePost() {
+
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState('')
+    // cons[Post, setPost] = useState({})
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/post/{params._id')
+            .then((response) => {
+                setLoading(false)
+                setError('')
+                // setPost(response.data)
+            })
+            .catch((error) => {
+                setLoading(false)
+                setError('Something went wrong')
+                // setPost({})
+            })
+    })
+
+
+
+
+    return (
+
+        <Container>
+            <React.Fragment>
+                <Navbar />
+
+                <H1></H1>
+                <br />
+                <Link to='https://twitter.com/?lang=fr'>
+                    <Icon>
+                        <TwitterIcon class='mt-5 h-4' sx={{ color: red[900] }} />
+                    </Icon>
+                </Link>
+                    <br /><br />
+                <Link to='https://www.instagram.com/'>
+                    <Icon>
+                        <InstagramIcon sx={{ color: red[900] }} />
+                    </Icon>
+                </Link>
+                    <br /><br />
+                <Link to='https://www.facebook.com/'>
+                    <Icon>
+                        <FacebookIcon sx={{ color: red[900] }} />
+                    </Icon>
+                </Link>
+
+        
+
+                <Div>
+
+                    {/* C'est à l'intérieur de cette div qu'on mettra le contenu */}
+                    <Div2>
+
+                        <H1> Les meilleurs exercices pour muscler ses bras </H1>
+
+                        <br />
+                        <H3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima illum iste explicabo aperiam molestias quis temporibus eveniet in,
+                            natus tempore dolores a cumque eos consequatur voluptatem iusto veniam obcaecati ratione.</H3>
+                        <br />
+                        <br />
+                        <br />
+                        <Para>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, saepe ipsa ea tempore at ex molestias
+                            excepturi alias quidem doloremque eveniet, consequuntur dolorum eum molestiae voluptatem officia sequi expedita nam?
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum provident ab deserunt ut nihil, esse assumenda explicabo,
+                            a nam quod labore laboriosam asperiores illo incidunt libero quaerat dolores alias eveniet!</Para>
+                        <Image src='../Images/imagetest2.jpg'></Image>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </Div2>
+
+
+                </Div>
+
+
+            </React.Fragment>
+        </Container>
+    )
+}
+
+export default FetchOnePost
