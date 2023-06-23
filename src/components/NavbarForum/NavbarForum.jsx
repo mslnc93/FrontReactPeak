@@ -102,7 +102,7 @@ function Navbar() {
               variant="h6"
               noWrap
               component="a"
-              href="/accueil"
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
@@ -282,7 +282,7 @@ function Navbar() {
 
                 <Button
                 className='test'
-                  href="/accueil"
+                  href="/"
                   onClick={handleCloseUserMenu}
                   sx={{ my: 2, display: 'block', p:'2px ', m:'2px '  }}
                 >

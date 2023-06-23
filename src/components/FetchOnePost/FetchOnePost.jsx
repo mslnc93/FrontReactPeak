@@ -42,7 +42,8 @@ function FetchOnePost() {
 
                 <H1></H1>
                 <br />
-                <div class='right-2 fixed'>
+                <div class='fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center'>
+                    
                     <Link to='https://twitter.com/?lang=fr'>
 
                         <TwitterIcon class='mt-5 h-8 fill-red-700 ' />
