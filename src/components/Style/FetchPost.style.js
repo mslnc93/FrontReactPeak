@@ -47,9 +47,3 @@ export const Image = styled.img`
     height: 55%;
 `
 
-export const Icon = styled.a `
-    position: fixed;
-    right: 40px;
-   
-
-`

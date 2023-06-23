@@ -42,25 +42,26 @@ function FetchOnePost() {
 
                 <H1></H1>
                 <br />
-                <Link to='https://twitter.com/?lang=fr'>
-                    <Icon>
-                        <TwitterIcon class='mt-5 h-4' sx={{ color: red[900] }} />
-                    </Icon>
-                </Link>
-                    <br /><br />
-                <Link to='https://www.instagram.com/'>
-                    <Icon>
-                        <InstagramIcon sx={{ color: red[900] }} />
-                    </Icon>
-                </Link>
-                    <br /><br />
-                <Link to='https://www.facebook.com/'>
-                    <Icon>
-                        <FacebookIcon sx={{ color: red[900] }} />
-                    </Icon>
-                </Link>
+                <div class='right-2 fixed'>
+                    <Link to='https://twitter.com/?lang=fr'>
 
-        
+                        <TwitterIcon class='mt-5 h-8 fill-red-700 ' />
+
+                    </Link>
+                    
+                    <Link to='https://www.instagram.com/'>
+
+                        <InstagramIcon class='mt-5 h-8 fill-red-700 ' />
+
+                    </Link>
+                    
+                    <Link to='https://www.facebook.com/'>
+
+                        <FacebookIcon class='mt-5 h-8 fill-red-700  ' />
+
+                    </Link>
+                </div>
+
 
                 <Div>
 
