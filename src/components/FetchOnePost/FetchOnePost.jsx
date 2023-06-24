@@ -69,7 +69,7 @@ function FetchOnePost() {
                     {/* C'est à l'intérieur de cette div qu'on mettra le contenu */}
                     <Div2>
 
-                        <H1> Les meilleurs exercices pour muscler ses bras </H1>
+                        <H1> Les meilleurs exercices pour que mimo perde du gras </H1>
 
                         <br />
                         <H3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima illum iste explicabo aperiam molestias quis temporibus eveniet in,

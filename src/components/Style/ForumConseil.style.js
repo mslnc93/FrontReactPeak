@@ -52,7 +52,7 @@ export const Lien = styled.div`
     color: #FF4E50;
     background-color: rgba(128, 128, 128, 0.05);
     height: 50px;
-    position: absolute;
+    margin-top: auto;
     bottom: 0;
     width: 100%;
     font-size: 20px;

@@ -11,6 +11,7 @@ import Faq from './components/Faq/Faq';
 import ForumConseils from './components/ForumConseils/ForumConseils';
 import FetchOnePost from './components/FetchOnePost/FetchOnePost';
 import './index.css';
+import PostForm from './components/PostForm/PostForm';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/forumconseils" element={<ForumConseils />} />
                 <Route path="/postforum" element={<FetchOnePost />} />
+                <Route path="/nouveaupost" element={<PostForm />} />
             </Routes>
         </div>
     )

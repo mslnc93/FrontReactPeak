@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../NavbarForum/NavbarForum'
 import { Div, Image, Titre, DivBody, P, H1, Lien } from '../Style/ForumConseil.style'
 import { Link } from 'react-router-dom'
@@ -7,11 +7,32 @@ import { Item } from 'semantic-ui-react'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import axios from 'axios'
 
 
 
 
 function ForumConseils() {
+
+
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/posts')
+      .then((response) => {
+        setLoading(false)
+        setError('')
+        setPosts(response.data)
+      })
+      .catch((error) => {
+        setLoading(false)
+        setError('Something went wrong')
+
+      })
+  }, [])
+
   return (
 
     <React.Fragment>
@@ -42,86 +63,30 @@ function ForumConseils() {
             </Link>
           </div>
 
-          
+
           <H1>Forum privé</H1>
 
 
           <Item.Group>
+{ posts.map(post => {
+  return (
+    <Item>
+    <Link className='w-full flex' to='/postforum'>
+    <Image src='../Images/firstpost.jpg' />
+      <Item.Content className='w-full flex flex-col justify-between'>  {/* le style est dans le stylelibrary.css */}
+        <Titre>{post.titre}</Titre>
+        <P>
+          {post.resume}
+        </P>
+        <Lien>Lire le poste</Lien>
+      </Item.Content>
+    </Link>
+  </Item>
+  )
+})}
 
 
-            <Item>
-              <Image src='../Images/firstpost.jpg' />
-              <Link to='/postforum'>
-                <Item.Content>  {/* le style est dans le stylelibrary.css */}
-                  <Titre>Premier post</Titre>
-                  <P>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum dolorum autem vero libero, eligendi non magni modi, dignissimos labore nihil velit
-                    accusantium recusandae assumenda dolore, earum aut amet distinctio ipsa.
-                  </P>
-                  <Lien>Lire le poste</Lien>
-                </Item.Content>
-              </Link>
-            </Item>
 
-
-            <Item>
-              <Image src='../Images/post2.jpg' />
-              <Link to='/postforum'>
-                <Item.Content>
-                  <Titre>Deuxième post</Titre>
-                  <P>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae optio aut rerum fugit nisi aspernatur facere debitis!
-                    In est maiores dignissimos pariatur non alias nesciunt voluptate reprehenderit quibusdam. Et, veniam.
-                  </P>
-                  <Lien>Lire le poste</Lien>
-                </Item.Content>
-              </Link>
-            </Item>
-
-
-            <Item>
-              <Image src='../Images/post3.jpg' />
-              <Link to='/postforum'>
-                <Item.Content>
-                  <Titre>Troisième post</Titre>
-                  <P>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates officia doloremque amet impedit aspernatur dolor quasi!
-                    Dolores ducimus eveniet rerum quod tempore dignissimos voluptatum inventore iste ex eaque. Fugiat, commodi.
-                  </P>
-                  <Lien>Lire le poste</Lien>
-                </Item.Content>
-              </Link>
-            </Item>
-
-
-            <Item>
-              <Image src='../Images/post3.jpg' />
-              <Link to='/postforum'>
-                <Item.Content>
-                  <Titre>Troisième post</Titre>
-                  <P>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates officia doloremque amet impedit aspernatur dolor quasi!
-                    Dolores ducimus eveniet rerum quod tempore dignissimos voluptatum inventore iste ex eaque. Fugiat, commodi.
-                  </P>
-                  <Lien>Lire le poste</Lien>
-                </Item.Content>
-              </Link>
-            </Item>
-
-
-            <Item>
-              <Image src='../Images/post3.jpg' />
-              <Link to='/postforum'>
-                <Item.Content>
-                  <Titre>Troisième post</Titre>
-                  <P>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates officia doloremque amet impedit aspernatur dolor quasi!
-                    Dolores ducimus eveniet rerum quod tempore dignissimos voluptatum inventore iste ex eaque. Fugiat, commodi.
-                  </P>
-                  <Lien>Lire le poste</Lien>
-                </Item.Content>
-              </Link>
-            </Item>
 
 
           </Item.Group>
