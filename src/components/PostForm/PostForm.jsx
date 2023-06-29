@@ -1,53 +1,28 @@
-// import React from 'react'
+import React from 'react'
 
-// function PostForm() {
-
-
-
-//   return (
+function PostForm() {
 
 
-//     <form onSubmit={handleSubmit} method='post'>
-//       <div>
-//         <label htmlFor="title">Titre :</label>
-//         <input
-//           type="text"
-//           value={titre}
-//           onChange={handleTitreChange}
-//         />
-//       </div>
 
-//       <div>
-//         <label>Résumé :</label>
-//         <input
-//           type="text"
-//           value={resume}
-//           onChange={handleResumeChange}
-//         />
-//       </div>
+  return (
 
-//       <div>
-//         <label>Image :</label>
-//         <input
-//           type="file"
-//           accept="image/*"
-//           onChange={handleFileChange}
-//         />
-//       </div>
+<form action="http://localhost:5000/submit-post" method='POST'>
+    <label>Titre :</label>
+    <input type="text" name='titre'/>
 
-//       <div>
-//         <label>Contenu :</label>
-//         <textarea
-//           id="content"
-//           value={contenu}
-//           onChange={handleContenuChange}
-//         />
-//       </div>
+    <label>Résumé :</label>
+    <input type="text" name='resume'/>
 
-//       <button type="submit">Soumettre</button>
-//     </form>
+    <label>Contenu :</label>
+    <input type="text" name='contenu'/>
+
+    <label>Image :</label>
+    <input type="file" name='imageNom'/>
+
+    <button type='submit'>Soummetre</button>
+</form>
     
-//   )
-// }
+  )
+}
 
-// export default PostForm
+export default PostForm

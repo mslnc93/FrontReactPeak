@@ -15,19 +15,19 @@ function FetchOnePost() {
 
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
-    // cons[Post, setPost] = useState({})
+    // const[Post, setPost] = useState({})
 
     useEffect(() => {
         axios.get('http://localhost:5000/post/{params._id')
             .then((response) => {
                 setLoading(false)
                 setError('')
-                // setPost(response.data)
+                
             })
             .catch((error) => {
                 setLoading(false)
                 setError('Something went wrong')
-                // setPost({})
+                
             })
     })
 
@@ -69,7 +69,7 @@ function FetchOnePost() {
                     {/* C'est à l'intérieur de cette div qu'on mettra le contenu */}
                     <Div2>
 
-                        <H1> Les meilleurs exercices pour que mimo perde du gras </H1>
+                        <H1> Les meilleurs exercices  </H1>
 
                         <br />
                         <H3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima illum iste explicabo aperiam molestias quis temporibus eveniet in,
