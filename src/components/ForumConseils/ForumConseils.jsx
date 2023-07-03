@@ -33,6 +33,18 @@ function ForumConseils() {
       })
   }, [])
 
+  const handleDelete = (postId) => {
+    axios.delete(`http://localhost:5000/post/delete/${posts._id}`)
+      .then(response => {
+        // Traitez la réponse réussie, par exemple, actualisez la liste des posts
+        console.log('Post supprimé avec succès');
+      })
+      .catch(error => {
+        // Traitez les erreurs, par exemple, affichez un message d'erreur
+        console.error('Erreur lors de la suppression du post', error);
+      });
+  };
+
   return (
 
     <React.Fragment>
@@ -68,22 +80,26 @@ function ForumConseils() {
 
 
           <Item.Group>
-{ posts.map(post => {
-  return (
-    <Item>
-    <Link className='w-full flex' to='/postforum'>
-     <Image src={`http://localhost:5000/${post.imagenom}`}/>
-      <Item.Content className='w-full flex flex-col justify-between'>  {/* le style est dans le stylelibrary.css */}
-        <Titre>{post.titre}</Titre>
-        <P>
-          {post.resume}
-        </P>
-        <Lien>Lire le poste</Lien>
-      </Item.Content>
-    </Link>
-  </Item>
-  )
-})}
+            {posts.map(post => {
+              return (
+                <Item>
+                  <Link className='w-full flex' to='/postforum'>
+                    <Image src={`http://localhost:5000/${post.imagenom}`} />
+                    <Item.Content className='w-full flex flex-col justify-between'>  {/* le style est dans le stylelibrary.css */}
+                      <Titre>{post.titre}</Titre>
+                      <P>
+                        {post.resume}
+                      </P>
+                      <Lien>Lire le poste</Lien>
+                    </Item.Content>
+                  </Link>
+                  <form onSubmit={() => handleDelete(post._id)}>
+                    <input type="submit" value="Supprimer" />
+                  </form>
+
+                </Item>
+              )
+            })}
 
 
 
