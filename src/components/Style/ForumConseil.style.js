@@ -8,7 +8,7 @@ export const Div = styled.div`
 
 export const DivBody = styled.div`
     background-color: #1A1A1A;
-    height: 1800px;
+    height: 3600px;
 `
 
 export const Image = styled.img`

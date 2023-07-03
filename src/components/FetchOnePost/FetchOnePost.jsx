@@ -29,7 +29,7 @@ function FetchOnePost() {
                 setError('Something went wrong')
                 
             })
-    })
+    }, [])
 
 
 
@@ -81,7 +81,7 @@ function FetchOnePost() {
                             excepturi alias quidem doloremque eveniet, consequuntur dolorum eum molestiae voluptatem officia sequi expedita nam?
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum provident ab deserunt ut nihil, esse assumenda explicabo,
                             a nam quod labore laboriosam asperiores illo incidunt libero quaerat dolores alias eveniet!</Para>
-                        <Image src='../Images/imagetest2.jpg'></Image>
+                        <Image></Image>
 
 
 

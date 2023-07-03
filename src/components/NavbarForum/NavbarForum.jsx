@@ -198,6 +198,13 @@ function Navbar() {
               >
                 Contact
               </Button>
+              <Button
+                href="/nouveaupost"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Créer un post
+              </Button>
 
             </Box>
             {/* Liens de la NavBar */}

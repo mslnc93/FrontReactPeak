@@ -72,7 +72,7 @@ function ForumConseils() {
   return (
     <Item>
     <Link className='w-full flex' to='/postforum'>
-    <Image src='../Images/firstpost.jpg' />
+     <Image src={`http://localhost:5000/${post.imagenom}`}/>
       <Item.Content className='w-full flex flex-col justify-between'>  {/* le style est dans le stylelibrary.css */}
         <Titre>{post.titre}</Titre>
         <P>
