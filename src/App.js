@@ -10,8 +10,9 @@ import Contact from './components/Contact/Contact';
 import Faq from './components/Faq/Faq';
 import ForumConseils from './components/ForumConseils/ForumConseils';
 import FetchOnePost from './components/FetchOnePost/FetchOnePost';
-import './index.css';
 import PostForm from './components/PostForm/PostForm';
+import UpdatePost from './components/PostForm/UpdatePost';
+import './index.css';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/forumconseils" element={<ForumConseils />} />
                 <Route path="/postforum" element={<FetchOnePost />} />
                 <Route path="/nouveaupost" element={<PostForm />} />
+                <Route path="/modifierpost" element={<UpdatePost />} />
             </Routes>
         </div>
     )

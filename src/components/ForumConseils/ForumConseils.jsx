@@ -33,17 +33,6 @@ function ForumConseils() {
       })
   }, [])
 
-  const handleDelete = (postId) => {
-    axios.delete(`http://localhost:5000/post/delete/${posts._id}`)
-      .then(response => {
-        // Traitez la réponse réussie, par exemple, actualisez la liste des posts
-        console.log('Post supprimé avec succès');
-      })
-      .catch(error => {
-        // Traitez les erreurs, par exemple, affichez un message d'erreur
-        console.error('Erreur lors de la suppression du post', error);
-      });
-  };
 
   return (
 
@@ -90,28 +79,41 @@ function ForumConseils() {
                       <P>
                         {post.resume}
                       </P>
-                      <Lien>Lire le poste</Lien>
+
+                      <Lien>Lire le poste </Lien>
                     </Item.Content>
+
                   </Link>
-                  <form onSubmit={() => handleDelete(post._id)}>
-                    <input type="submit" value="Supprimer" />
+
+                  <form action={`http://localhost:5000/post/delete/${post._id}?_method=DELETE`} method="post">
+                    <input type="hidden" name="_method" value="DELETE" />
+
+                    <button className='absolute flex ml-5 mt-20 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' type="submit"
+                    >Supprimer</button>
+                  <Link to={`/modifierpost/${post._id}`}><button className='absolute flex ml-5 mt-40 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded'>Modifier</button></Link>
                   </form>
+
+
 
                 </Item>
               )
+
             })}
 
-
-
-
-
           </Item.Group>
-
         </Div>
 
       </DivBody>
+
     </React.Fragment>
   )
+
 }
+
+
+
+
+
+
 
 export default ForumConseils

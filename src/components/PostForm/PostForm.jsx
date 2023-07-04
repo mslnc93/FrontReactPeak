@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 function PostForm() {
   const [file, setFile] = useState(null);
@@ -55,8 +56,10 @@ function PostForm() {
 
 
   return (
-
     <form onSubmit={handleSubmit}>
+      
+      <Navbar />
+
       <label>Titre :</label>
       <input type="text" name='titre' onChange={handleTitreChange} />
 
