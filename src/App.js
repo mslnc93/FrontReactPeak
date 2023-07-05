@@ -30,7 +30,7 @@ function App() {
                 <Route path="/forumconseils" element={<ForumConseils />} />
                 <Route path="/postforum" element={<FetchOnePost />} />
                 <Route path="/nouveaupost" element={<PostForm />} />
-                <Route path="/modifierpost" element={<UpdatePost />} />
+                <Route path="/modifierpost/:id" element={<UpdatePost />} />
             </Routes>
         </div>
     )
