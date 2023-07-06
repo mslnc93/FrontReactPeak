@@ -12,6 +12,7 @@ import ForumConseils from './components/ForumConseils/ForumConseils';
 import FetchOnePost from './components/FetchOnePost/FetchOnePost';
 import PostForm from './components/PostForm/PostForm';
 import UpdatePost from './components/PostForm/UpdatePost';
+import ProduitForm from './components/Produits/ProduitForm';
 import './index.css';
 
 
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/postforum" element={<FetchOnePost />} />
                 <Route path="/nouveaupost" element={<PostForm />} />
                 <Route path="/modifierpost/:id" element={<UpdatePost />} />
+                <Route path="/ajouterproduit" element={<ProduitForm />} />
             </Routes>
         </div>
     )

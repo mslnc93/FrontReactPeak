@@ -45,19 +45,23 @@ function Produits() {
     return (
         <div>
             <Navbar0 />
-            <Navbar/>
+            <Navbar />
+            <div className='flex justify-center mx-auto w-3/4'>
+                {state.loading ? 'Loading...' : state.produits.map(produit => {
+                    return (
 
-            <h1>Accueil</h1>
 
-            {state.loading ? 'Loading...' : state.produits.map(produit => {
-                return (
-                    <React.Fragment>
-                        <h3>{produit.nom}</h3>
-                        <p>{produit.description}</p>
-                    </React.Fragment>
-                )
-            })}
 
+                        <div className='text-center flex-1 bg-white p-4 m-4 shadow-md'>
+                            <div className="w-100 h-50 border rounded overflow-hidden mb-4">
+                                <img src={produit.image} alt={produit.nom} className="w-full h-full object-cover" />
+                            </div>
+                            <h3> {produit.nom} </h3>
+
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
