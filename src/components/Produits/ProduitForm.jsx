@@ -66,6 +66,7 @@ function ProduitForm() {
         <label>Image :</label>
         <input
           type="file"
+          name='imagenom'
           onChange={handleFileChange}
         />
       </div>

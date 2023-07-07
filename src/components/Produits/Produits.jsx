@@ -1,62 +1,44 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Navbar from '../Navbar/Navbar';
 import Navbar0 from '../Navbar0/Navbar0';
+import { Link } from 'react-router-dom';
 
 function Produits() {
 
-    const initialState = {
-        loading: true,
-        error: '',
-        produits: {}
-    };
-
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case 'FETCH_SUCCESS': return {
-                loading: false,
-                produits: action.payload,
-                error: ''
-            }
-            case 'FETCH_ERROR': return {
-                loading: false,
-                produits: {},
-                error: 'Something went wrong !'
-            }
-            default: return state
-        }
-    }
-
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState('')
+    const [produits, setProduits] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:5000/produits')
-
-            .then(response => {
-                console.log(response)
-                dispatch({ type: 'FETCH_SUCCESS', payload: response.data });
+            .then((response) => {
+                setLoading(false)
+                setError('')
+                setProduits(response.data)
             })
-            .catch(error => {
-                dispatch({ type: 'FETCH_ERROR', payload: error })
-            });
+            .catch((error) => {
+                setLoading(false)
+                setError('Something went wrong')
+
+            })
     }, [])
+
 
 
     return (
         <div>
             <Navbar0 />
             <Navbar />
-            <div className='flex justify-center mx-auto w-3/4'>
-                {state.loading ? 'Loading...' : state.produits.map(produit => {
+            <div className='flex flex-wrap justify-center mx-auto w-3/4 space-x-4  space-y-4'>
+                {produits.map(produit => {
                     return (
-
-
-
-                        <div className='text-center flex-1 bg-white p-4 m-4 shadow-md'>
-                            <div className="w-100 h-50 border rounded overflow-hidden mb-4">
-                                <img src={produit.image} alt={produit.nom} className="w-full h-full object-cover" />
+                        <div className='text-center w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 shadow-md border border-gray-200 '>
+                            <div className="rounded overflow-hidden mb-4 flex justify-center items-center">
+                                <Link to='/'><img src={`http://localhost:5000/${produit.imagenom}`} alt={produit.nom} className="w-auto h-auto object-cover max-h-40" /></Link>
                             </div>
-                            <h3> {produit.nom} </h3>
+                            <h4> {produit.nom} </h4>
+                            <h2> {produit.prix} </h2>
 
                         </div>
                     )
