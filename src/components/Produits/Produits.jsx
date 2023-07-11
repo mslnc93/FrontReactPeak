@@ -30,6 +30,7 @@ function Produits() {
         <div>
             <Navbar0 />
             <Navbar />
+            <h1 className='text-center font-poppins'>Découvrez nos produits</h1>
             <div className="mx-auto max-w-6xl px-2 mt-12">
                 <div className="flex flex-wrap -mx-4">
                     {produits.map((produit) => (
@@ -44,8 +45,16 @@ function Produits() {
                                         />
                                     </Link>
                                 </div>
-                                <h4 className="text-xl font-bold mt-4">{produit.nom}</h4>
-                                <h2 className="text-lg font-medium">{produit.prix}</h2>
+                                <h4 className="text-xl font-bold mt-2 mb-2 text-center">{produit.nom}</h4>
+                                <h2 className="text-lg font-medium text-center my-0">{produit.prix}€</h2>
+                                <div className="mt-4">
+                                    <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                                        Ajouter au panier
+                                    </button>
+                                    <button className="w-4/5 mx-auto block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">
+                                        Acheter
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}

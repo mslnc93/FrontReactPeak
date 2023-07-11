@@ -203,6 +203,13 @@ function Navbar() {
               >
                 Contact
               </Button>
+              <Button
+                href="/ajouterproduit"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Ajouter produit
+              </Button>
 
             </Box>
             {/* Liens de la NavBar */}
