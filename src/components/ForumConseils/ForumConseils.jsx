@@ -72,7 +72,7 @@ function ForumConseils() {
             {posts.map(post => {
               return (
                 <Item>
-                  <Link className='w-full flex' to='/postforum'>
+                  <Link className='w-full flex' to={`/postforum/${post._id}`}>
                     <Image src={`http://localhost:5000/${post.imagenom}`} />
                     <Item.Content className='w-full flex flex-col justify-between overflow-hidden'>  {/* le style est dans le stylelibrary.css */}
                       <Titre>{post.titre}</Titre>

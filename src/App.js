@@ -29,7 +29,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/forumconseils" element={<ForumConseils />} />
-                <Route path="/postforum" element={<FetchOnePost />} />
+                <Route path="/postforum/:postId" element={<FetchOnePost />} />
                 <Route path="/nouveaupost" element={<PostForm />} />
                 <Route path="/modifierpost/:id" element={<UpdatePost />} />
                 <Route path="/ajouterproduit" element={<ProduitForm />} />

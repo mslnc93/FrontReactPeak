@@ -6,30 +6,34 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { red } from '@mui/material/colors';
-import { Link } from 'react-router-dom'
-
+import { Link, useParams } from 'react-router-dom'
 
 
 
 function FetchOnePost() {
-
+    
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
-    // const[Post, setPost] = useState({})
+    const [post, setPost] = useState({})
+    const [film, setFilm] = useState({})
+    // const { _id } = useParams();
+    const params = useParams();
 
+    console.log(params.postId);
     useEffect(() => {
-        axios.get('http://localhost:5000/post/{params._id')
+        axios.get(`http://localhost:5000/post/${params.postId}`)
             .then((response) => {
                 setLoading(false)
-                setError('')
-                
+                setError()
+                setFilm(response.data)
+
             })
             .catch((error) => {
                 setLoading(false)
                 setError('Something went wrong')
-                
+
             })
-    }, [])
+    }, []);
 
 
 
@@ -43,19 +47,19 @@ function FetchOnePost() {
                 <H1></H1>
                 <br />
                 <div class='fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center'>
-                    
+
                     <Link to='https://twitter.com/?lang=fr'>
 
                         <TwitterIcon class='mt-5 h-8 fill-red-700 ' />
 
                     </Link>
-                    
+
                     <Link to='https://www.instagram.com/'>
 
                         <InstagramIcon class='mt-5 h-8 fill-red-700 ' />
 
                     </Link>
-                    
+
                     <Link to='https://www.facebook.com/'>
 
                         <FacebookIcon class='mt-5 h-8 fill-red-700  ' />
@@ -69,7 +73,9 @@ function FetchOnePost() {
                     {/* C'est à l'intérieur de cette div qu'on mettra le contenu */}
                     <Div2>
 
-                        <H1> Les meilleurs exercices  </H1>
+                    
+
+                        <H1> {loading ? "loading" : film.titre}  </H1>
 
                         <br />
                         <H3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima illum iste explicabo aperiam molestias quis temporibus eveniet in,
@@ -81,7 +87,7 @@ function FetchOnePost() {
                             excepturi alias quidem doloremque eveniet, consequuntur dolorum eum molestiae voluptatem officia sequi expedita nam?
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum provident ab deserunt ut nihil, esse assumenda explicabo,
                             a nam quod labore laboriosam asperiores illo incidunt libero quaerat dolores alias eveniet!</Para>
-                        <Image></Image>
+                        <Image src={`http://localhost:5000/${film.imagenom}`} alt="Image du post" />
 
 
 
