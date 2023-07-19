@@ -8,7 +8,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import axios from 'axios'
-
+import { TrashIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
 
 
 
@@ -88,16 +88,19 @@ function ForumConseils() {
                   <form action={`http://localhost:5000/post/delete/${post._id}?_method=DELETE`} method="post">
                     <input type="hidden" name="_method" value="DELETE" />
 
-                    <button className='absolute flex ml-5 mt-20 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' type="submit"
-                    >Supprimer</button>
-                  <Link to={`/modifierpost/${post._id}`}><button className='absolute flex ml-5 mt-40 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded'>Modifier</button></Link>
+                    <button className='absolute flex ml-5 mt-20 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' type="submit">
+                      <TrashIcon className="h-5 w-5" />
+                    </button>
+
+                    <Link to={`/modifierpost/${post._id}`}>
+                      <button className='absolute flex ml-5 mt-40 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded'>
+                        <PencilSquareIcon className="h-5 w-5" />
+                      </button>
+                    </Link>
                   </form>
-
-
 
                 </Item>
               )
-
             })}
 
           </Item.Group>

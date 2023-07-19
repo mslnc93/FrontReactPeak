@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Navbar0 from '../Navbar0/Navbar0'
 import axios from 'axios'
@@ -55,16 +55,63 @@ function Accueil() {
           <div className="w-full md:w-1/3 px-4 mb-8">
             <div className="bg-white rounded-lg shadow-lg flex flex-col">
               <img
-                src="Images/firstpost.jpg" // Remplace par le chemin vers ton image
+                src="Images/collagen.jpg" // Remplace par le chemin vers ton image
                 alt="Image du produit"
-                className="object-cover"
+                className="object-contain h-64"
               />
               <div className="px-4 py-4 flex-grow">
-                <h3 className="text-xl font-semibold mb-2">produit.nom</h3>
-                <p className="text-gray-700">produit.prix</p>
+                <h3 className="text-xl font-semibold mb-2 text-center">produit.nom</h3>
+                <p className="text-gray-700 text-center">produit.prix</p>
               </div>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                Ajouter au panier
+              </button>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">
+                Acheter
+              </button>
             </div>
           </div>
+
+          <div className="w-full md:w-1/3 px-4 mb-8">
+            <div className="bg-white rounded-lg shadow-lg flex flex-col">
+              <img
+                src="Images/creatine.png" // Remplace par le chemin vers ton image
+                alt="Image du produit"
+                className="object-contain h-64"
+              />
+              <div className="px-4 py-4 flex-grow">
+                <h3 className="text-xl font-semibold mb-2 text-center">produit.nom</h3>
+                <p className="text-gray-700 text-center">produit.prix</p>
+              </div>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                Ajouter au panier
+              </button>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">
+                Acheter
+              </button>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/3 px-4 mb-8">
+            <div className="bg-white rounded-lg shadow-lg flex flex-col">
+              <img
+                src="Images/omega3.jpg" // Remplace par le chemin vers ton image
+                alt="Image du produit"
+                className="object-contain h-64"
+              />
+              <div className="px-4 py-4 flex-grow">
+                <h3 className="text-xl font-semibold mb-2 text-center">produit.nom</h3>
+                <p className="text-gray-700 text-center">produit.prix</p>
+              </div>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                Ajouter au panier
+              </button>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">
+                Acheter
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -77,19 +124,47 @@ function Accueil() {
         <h2 className='font-poppins font-bold '>Nouveautés</h2>
 
         <div className="flex flex-wrap -mx-4 ">
+
           <div className="w-full md:w-1/2 px-4 mb-8">
             <div className="bg-white rounded-lg shadow-lg flex flex-col">
               <img
-                src="Images/post3.jpg" // Remplace par le chemin vers ton image
+                src="Images/wheyharder.jpg" // Remplace par le chemin vers ton image
                 alt="Image du produit"
-                className="object-cover"
+                className="object-contain h-96"
               />
               <div className="px-4 py-4 flex-grow">
-                <h3 className="text-xl font-semibold mb-2">Titre du produit</h3>
-                <p className="text-gray-700">Prix</p>
+                <h3 className="text-xl font-semibold mb-2 text-center">Titre du produit</h3>
+                <p className="text-gray-700 text-center">Prix</p>
               </div>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                Ajouter au panier
+              </button>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">
+                Acheter
+              </button>
             </div>
           </div>
+
+          <div className="w-full md:w-1/2 px-4 mb-8">
+            <div className="bg-white rounded-lg shadow-lg flex flex-col">
+              <img
+                src="Images/wheyON.jpg" // Remplace par le chemin vers ton image
+                alt="Image du produit"
+                className="object-contain h-96"
+              />
+              <div className="px-4 py-4 flex-grow">
+                <h3 className="text-xl font-semibold mb-2 text-center">Titre du produit</h3>
+                <p className="text-gray-700 text-center">Prix</p>
+              </div>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                Ajouter au panier
+              </button>
+              <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">
+                Acheter
+              </button>
+            </div>
+          </div>
+
         </div>
 
       </div>
