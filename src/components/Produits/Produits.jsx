@@ -3,6 +3,8 @@ import axios from 'axios'
 import Navbar from '../Navbar/Navbar';
 import Navbar0 from '../Navbar0/Navbar0';
 import { Link } from 'react-router-dom';
+import { TrashIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
+
 
 function Produits() {
 
@@ -45,8 +47,21 @@ function Produits() {
                                         />
                                     </Link>
                                 </div>
+
+                                {/* <Link to={`/modifierpost/${produit._id}`}>
+                                    <button className='absolute flex ml-52 mt-2 text-orange-600 font-bold py-2 px-4 rounded'>
+                                        <PencilSquareIcon className="h-4 w-4" />
+                                    </button>
+                                </Link>
+
+                                <button className='absolute flex ml-52 mt-12 font-bold text-red-600 py-2 px-4 rounded' type="submit">
+                                    <TrashIcon className="h-4 w-4" />
+                                </button> */}
+
+
                                 <h4 className="text-xl font-bold mt-2 mb-2 text-center">{produit.nom}</h4>
                                 <h2 className="text-lg font-medium text-center my-0">{produit.prix}€</h2>
+
                                 <div className="mt-4">
                                     <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
                                         Ajouter au panier
@@ -55,6 +70,7 @@ function Produits() {
                                         Acheter
                                     </button>
                                 </div>
+
                             </div>
                         </div>
                     ))}

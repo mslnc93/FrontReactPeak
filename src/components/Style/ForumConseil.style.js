@@ -17,8 +17,7 @@ export const Image = styled.img`
     
 `
 export const Logo = styled.img`
-    width: 100px;
-    height: 40px;
+
     margin-bottom: 15px;
     
 `

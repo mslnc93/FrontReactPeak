@@ -88,15 +88,16 @@ function ForumConseils() {
                   <form action={`http://localhost:5000/post/delete/${post._id}?_method=DELETE`} method="post">
                     <input type="hidden" name="_method" value="DELETE" />
 
-                    <button className='absolute flex ml-5 mt-20 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' type="submit">
-                      <TrashIcon className="h-5 w-5" />
-                    </button>
-
                     <Link to={`/modifierpost/${post._id}`}>
-                      <button className='absolute flex ml-5 mt-40 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded'>
+                      <button className='absolute flex ml-5 mt-20 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded'>
                         <PencilSquareIcon className="h-5 w-5" />
                       </button>
                     </Link>
+
+                    <button className='absolute flex ml-5 mt-40 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' type="submit">
+                      <TrashIcon className="h-5 w-5" />
+                    </button>
+
                   </form>
 
                 </Item>
