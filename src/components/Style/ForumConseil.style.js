@@ -17,9 +17,9 @@ export const Image = styled.img`
     
 `
 export const Logo = styled.img`
-
     margin-bottom: 15px;
-    
+    height: 40px;
+    width: 100px;
 `
 
 
@@ -28,15 +28,15 @@ export const Titre = styled.div`
     font-size: x-large;
     margin-bottom: 30px;
     margin-top: 15px;
-    color: #00CC7A;
+    color: #57CC99;
 `
 
 export const P = styled.div`
-    color: #EFEFEF;
+    color: black;
 `
 
 export const H1 = styled.div`
-    color: #00CC7A;
+    color: #57CC99;
     font-weight: 900;
     font-size: 60px;
     padding-top: 60px;
@@ -48,7 +48,7 @@ export const Lien = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FF4E50;
+    color: #00BFFF;
     background-color: rgba(128, 128, 128, 0.05);
     height: 50px;
     margin-top: auto;
@@ -56,7 +56,6 @@ export const Lien = styled.div`
     width: 100%;
     font-size: 20px;
     &:hover{
-        color: red;
         transform: scale(1.05);
     }
 `

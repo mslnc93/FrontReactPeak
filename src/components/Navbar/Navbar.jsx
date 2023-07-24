@@ -99,7 +99,7 @@ function Navbar() {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="static" className="h-16">
+      <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -118,11 +118,8 @@ function Navbar() {
                 textDecoration: 'none',
               }}
             >
-
-              <div className="flex-shrink-0 flex-grow-0">
-                <img src="../Images/logopeakoff.png" alt="Logo Peak" className="h-auto max-h-20" />
-              </div>
-
+              <Logo src="../Images/logopeakoff.png" />
+              
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

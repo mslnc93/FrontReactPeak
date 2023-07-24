@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Div, Div2, H1, H3, Image, Container, Para, Icon } from '../Style/FetchPost.style'
-import Navbar from '../NavbarForum/NavbarForum'
+import Navbar from '../Navbar/Navbar'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -50,19 +50,19 @@ function FetchOnePost() {
 
                     <Link to='https://twitter.com/?lang=fr'>
 
-                        <TwitterIcon class='mt-5 h-8 fill-red-700 ' />
+                        <TwitterIcon class='mt-5 h-8 fill-bleu-elec ' />
 
                     </Link>
 
                     <Link to='https://www.instagram.com/'>
 
-                        <InstagramIcon class='mt-5 h-8 fill-red-700 ' />
+                        <InstagramIcon class='mt-5 h-8 fill-bleu-elec  ' />
 
                     </Link>
 
                     <Link to='https://www.facebook.com/'>
 
-                        <FacebookIcon class='mt-5 h-8 fill-red-700  ' />
+                        <FacebookIcon class='mt-5 h-8 fill-bleu-elec   ' />
 
                     </Link>
                 </div>

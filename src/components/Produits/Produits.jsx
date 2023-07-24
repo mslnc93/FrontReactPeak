@@ -63,7 +63,7 @@ function Produits() {
                                 <h2 className="text-lg font-medium text-center my-0">{produit.prix}€</h2>
 
                                 <div className="mt-4">
-                                    <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors duration-300">
+                                    <button className="w-4/5 mx-auto mb-4 block px-4 py-2 text-white bg-bleu-elec rounded-md hover:bg-blue-500 transition-colors duration-300">
                                         Ajouter au panier
                                     </button>
                                     <button className="w-4/5 mx-auto block px-4 py-2 text-white bg-green-elec rounded-md hover:bg-green-500 transition-colors duration-300">

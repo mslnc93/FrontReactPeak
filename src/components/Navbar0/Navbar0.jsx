@@ -1,16 +1,15 @@
 import React from 'react'
-import { Navstyle } from '../Style/Navbar.style'
 
 
 function Navbar0() {
   return (
     
 
-    <Navstyle>
+    <div className='w-full h-6 bg-jaune text-center'>
     
         <p>Profitez de notre offre : Livraison gratuite à partir de 60€ d'achat !</p>
     
-    </Navstyle>
+    </div>
     
   )
 }

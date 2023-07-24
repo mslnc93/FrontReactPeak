@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../NavbarForum/NavbarForum'
+import Navbar from '../Navbar/Navbar'
 import { Div, Image, Titre, DivBody, P, H1, Lien } from '../Style/ForumConseil.style'
 import { Link } from 'react-router-dom'
 import "../Style/styleLibrary.css"
@@ -47,19 +47,19 @@ function ForumConseils() {
 
             <Link to='https://twitter.com/?lang=fr'>
 
-              <TwitterIcon class='mt-5 h-8 fill-red-700 ' />
+              <TwitterIcon class='mt-5 h-8 fill-bleu-elec ' />
 
             </Link>
 
             <Link to='https://www.instagram.com/'>
 
-              <InstagramIcon class='mt-5 h-8 fill-red-700 ' />
+              <InstagramIcon class='mt-5 h-8 fill-bleu-elec ' />
 
             </Link>
 
             <Link to='https://www.facebook.com/'>
 
-              <FacebookIcon class='mt-5 h-8 fill-red-700  ' />
+              <FacebookIcon class='mt-5 h-8 fill-bleu-elec  ' />
 
             </Link>
           </div>
@@ -85,7 +85,7 @@ function ForumConseils() {
 
                   </Link>
 
-                  <form action={`http://localhost:5000/post/delete/${post._id}?_method=DELETE`} method="post">
+                  {/* <form action={`http://localhost:5000/post/delete/${post._id}?_method=DELETE`} method="post">
                     <input type="hidden" name="_method" value="DELETE" />
 
                     <Link to={`/modifierpost/${post._id}`}>
@@ -98,7 +98,7 @@ function ForumConseils() {
                       <TrashIcon className="h-5 w-5" />
                     </button>
 
-                  </form>
+                  </form> */}
 
                 </Item>
               )
