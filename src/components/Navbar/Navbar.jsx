@@ -10,11 +10,12 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-
 import AdbIcon from '@mui/icons-material/Adb';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -22,6 +23,7 @@ import "../Style/styleLibrary.css"
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Image, Logo } from '../Style/ForumConseil.style';
+import { Router } from 'react-router-dom';
 
 
 // const pages = ['Nos Produits', 'Forum & Conseils', 'Contact', 'F.A.Q'];
@@ -78,25 +80,41 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
+
+
+
+
 function Navbar() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  
+  function handleLogout() {
+    // Envoi de la requête GET de déconnexion au serveur
+    axios.get('http://localhost:5000/api/deconnexion', { withCredentials: true })
+    .then(() => {
+      navigate('/');
+    })
+    .catch((error) => {
+      console.error('Erreur lors de la déconnexion :', error);
+    });
+  }
   return (
     <ThemeProvider theme={theme}>
       <AppBar position="static">
@@ -119,7 +137,7 @@ function Navbar() {
               }}
             >
               <Logo src="../Images/logopeakoff.png" />
-              
+
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -212,6 +230,14 @@ function Navbar() {
                 Ajout produit
               </Button>
 
+              <Button
+                href="/inscription"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Inscription
+              </Button>
+
             </Box>
             {/* Liens de la NavBar */}
 
@@ -296,7 +322,7 @@ function Navbar() {
                 <Button
                   className='test'
                   href="/"
-                  onClick={handleCloseUserMenu}
+                  onClick={handleLogout}
                   sx={{ my: 2, display: 'block', p: '2px ', m: '2px ' }}
                 >
                   Déconnexion
