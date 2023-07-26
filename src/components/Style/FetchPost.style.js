@@ -41,9 +41,14 @@ export const Para = styled.div`
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     `
 
-export const Image = styled.img`
-    margin-top: 60px;
-    width: 100%;
-    height: 55%;
-`
 
+//Section commentaires
+
+export const Commentaires = styled.div`
+    border: solid #00CC7A 2px;
+    border-top: none;
+    height: 100px;
+    margin: 0 25%;
+    margin-top: 40px;
+
+`
